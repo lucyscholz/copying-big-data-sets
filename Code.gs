@@ -78,9 +78,9 @@ function export() {
 
   for (x = 0; x < allUrl.length; x++) {
       var destination = SpreadsheetApp.openByUrl(allUrl[x]); //opens sheet based on url for each url in array
-//      var destinationTab = destination.getSheetByName("Master Roster Import"); //opens master roster import tab
-//      destinationTab.getRange("A:DB").clear(); //clears master roster imprt tab
-//      destinationTab.getRange("A1:DB" + (bigData[x].length)).setValues(bigData[x]); //sets values based on array
+      var destinationTab = destination.getSheetByName("Master Roster Import"); //opens master roster import tab
+      destinationTab.getRange("A:DB").clear(); //clears master roster imprt tab
+      destinationTab.getRange("A1:DB" + (bigData[x].length)).setValues(bigData[x]); //sets values based on array
       
       var additionalTab = destination.getSheetByName("Additional Data Import");
       additionalTab.getRange("A:W").clear();
